@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cardiv{
+            display: flex;
+            flex-wrap: wrap;
+            /* margin: 5px 10px; */
+           
+           
+
+        }
+        .products{
+             height: 570px;
+            width: 250px;
+            border: 2px solid yellow;
+            padding: 5px;
+           
+        }
+        .products button{
+            /* gap: 20px; */
+            color: white;
+            /* margin-right: 100px; */
+            border: none;
+            /* padding: 5px; */
+            border-radius: 5px;
+            height: 30px;
+            width: 50px;
+           
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>I am using ejs</h1>
+
+<div class="cardiv">
+    <% carProducts.forEach((products, index) => { %>
+      <div class="products">
+        <img src="<%= products.image %>" width="250px" height="250px" alt=""> <br>
+        <p>Brand:  <%= products.brand %></p>
+        <p>Year:  <%= products.year %></p>
+      
+       <p>currency:  <%= products.currency %></p>
+       <p>Location:  <%= products.location %></p>
+        <p>description:  <%= products.description %></p>
+      <form action="/delete/<%= index %>" method="post">
+         <button style="background-color: red; margin-right: 100px;"  type="submit">Delete</button>
+      </form>
+      <form action="/editproduct/<%= index %>" method="get">
+         <button style="background-color: blue;">Edit</button>
+      </form>
+     
+      </div>
+      <%}); %>
+</div>
+</body>
+</html>
