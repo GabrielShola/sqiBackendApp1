@@ -4,7 +4,7 @@ const { createUser, getUser, deleteUser, login, verifyUser } = require("../contr
 
 const router = express.Router()
 
- router.post("/signup", createUser)
+ router.post("/register", createUser)
  router.get("/getuser", verifyUser, getUser)
  router.delete("/deleteuser/:id", deleteUser)
  router.post("/login", verifyUser, login)
