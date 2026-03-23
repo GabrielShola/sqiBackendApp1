@@ -14,11 +14,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json())
 
-const userRouter = require("../WEEK3/router/userRouter")
+const userRouter = require("../sqiBankendApp/router/userRouter")
 app.use("/api/v1", userRouter)
 
 
-const productRouter = require("../WEEK3/router/productRouter")
+const productRouter = require("../sqiBankendApp/router/productRouter")
 app.use("/api/v1", productRouter)
 
 
