@@ -5,7 +5,7 @@ const { verifyUser } = require("../controllers/userController")
 const { createProduct, fetchProducts } = require("../controllers/productController")
 const router = express.Router()
 
-router.post("/addproduct", verifyUser, createProduct)
+router.post("/addproducts", verifyUser, createProduct)
 router.get("/fetchproduct", verifyUser, fetchProducts)
 
 
